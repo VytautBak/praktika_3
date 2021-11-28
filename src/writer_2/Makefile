@@ -5,7 +5,7 @@ OBJ:=$(SRC:.c=.o)
 LDFLAGS:=-L../../lib -llogger
 CPPFLAGS:=-I../../lib
 
-
+.PHONY: all clean
 
 all: $(BIN)
 

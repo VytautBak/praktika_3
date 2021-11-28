@@ -1,4 +1,5 @@
 
+
 .PHONY: lib reader writer_1 writer_2 clean
 
 all: lib reader writer_1 writer_2
