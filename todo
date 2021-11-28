@@ -1,0 +1,5 @@
+todo:
+- compile reader and lib into one executable
+- finish writing writer_2
+- make tester look nicer
+- ? open_log and close_log shouldn't exist??
