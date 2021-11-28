@@ -34,6 +34,7 @@ void print_log_of(char *program)
             strcpy(buffer_copy, buffer);
             token = strtok(buffer_copy, " ");
             token = strtok(NULL, " ");
+            token = strtok(NULL, " ");
             if(token != NULL) {
                 if(strcmp(program, token) == 0) {
                     printf("%s", buffer);
