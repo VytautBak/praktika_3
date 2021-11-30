@@ -2,8 +2,8 @@ CC:=gcc
 BIN:=logreader
 SRC:=$(wildcard *.c)
 OBJ:=$(SRC:.c=.o)
-LDFLAGS:=-L../../lib -llogger
-CPPFLAGS:=-I../../lib
+LDFLAGS:=-L../lib -llogger
+CPPFLAGS:=-I../lib
 
 .PHONY: all clean
 
