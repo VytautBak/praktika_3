@@ -2,8 +2,8 @@ CC:=gcc
 BIN:=random_generator
 SRC:=$(wildcard *.c)
 OBJ:=$(SRC:.c=.o)
-LDFLAGS:=-L../../../logger/lib -llogger
-CPPFLAGS:=-I../../lib
+LDFLAGS:=-L../../logger/lib -llogger
+CPPFLAGS:=-I../../logger/lib
 
 PREFIX?=/usr
 

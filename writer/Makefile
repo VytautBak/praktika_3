@@ -1,18 +1,18 @@
 
 
-.PHONY: random_generator clean install uninstall
+.PHONY: src clean install uninstall
 
-all: random_generator 
+all: src
 
-random_generator:
-	$(MAKE) -C src/$@
+src:
+	$(MAKE) -C $@
 
 clean:
-	$(MAKE) -C src/random_generator clean
+	$(MAKE) -C src clean
 
-install: random_generator
-	$(MAKE) -C src/random_generator install
+install: src
+	$(MAKE) -C src install
 
 uninstall:
-	$(MAKE) -C src/random_generator uninstall
+	$(MAKE) -C src uninstall
 
