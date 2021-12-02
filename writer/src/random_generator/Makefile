@@ -1,9 +1,9 @@
 CC:=gcc
-BIN:=dalumo_skaiciuokle
+BIN:=random_generator
 SRC:=$(wildcard *.c)
 OBJ:=$(SRC:.c=.o)
 LDFLAGS:=-L../../../logger/lib -llogger
-CPPFLAGS:=-I../../logger/lib
+CPPFLAGS:=-I../../lib
 
 PREFIX?=/usr
 
@@ -16,14 +16,13 @@ $(BIN): $(OBJ)
 
 clean:
 	$(RM) $(BIN) $(OBJ)
-	
+
 install: $(BIN)
 	install -d $(PREFIX)/bin
 	install -m 555 $(BIN) $(PREFIX)/bin/$(BIN) 
 
 uninstall:
 	$(RM) -f $(PREFIX)/bin/$(BIN)
-
 
 
 

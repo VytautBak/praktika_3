@@ -1,25 +1,23 @@
 
 
-.PHONY: lib reader writer_1 writer_2 clean
+.PHONY: logger writer install uninstall
 
-all: lib reader writer_1 writer_2
+all: logger writer
 
-lib:
+logger:
 	$(MAKE) -C $@
 
-reader: lib
-	$(MAKE) -C src/$@
-
-writer_1: lib
-	$(MAKE) -C src/$@
-
-writer_2: lib
-	$(MAKE) -C src/$@
-	
+writers:
+	$(MAKE) -C $@
 
 clean:
-	$(MAKE) -C lib clean
-	$(MAKE) -C src/reader clean
-	$(MAKE) -C src/writer_1 clean
-	$(MAKE) -C src/writer_2 clean
+	$(MAKE) -C writer clean
+	$(MAKE) -C logger clean
 
+install: logger writer
+	$(MAKE) -C writer install
+	$(MAKE) -C logger install
+
+uninstall:
+	$(MAKE) -C writer uninstall
+	$(MAKE) -C logger uninstall

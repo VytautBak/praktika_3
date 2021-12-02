@@ -15,6 +15,12 @@ $(BIN): $(OBJ)
 clean:
 	$(RM) $(BIN) $(OBJ)
 
+install: $(BIN)
+	install -d $(PREFIX)/bin
+	install -m 555 $(BIN) $(PREFIX)/bin/$(BIN) 
+
+uninstall:
+	$(RM) -f $(PREFIX)/bin/$(BIN)
 
 
 
