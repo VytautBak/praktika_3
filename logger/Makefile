@@ -1,18 +1,24 @@
 
 
-.PHONY: lib reader writer_1 writer_2 clean
+.PHONY: lib src clean install uninstall
 
-all: lib reader writer_1 writer_2
+all: lib src
 
 lib:
 	$(MAKE) -C $@
 
 src: lib
-	$(MAKE) -C src/$@	
+	$(MAKE) -C $@
 
 clean:
 	$(MAKE) -C lib clean
 	$(MAKE) -C src clean
-install: lib
+
+install: lib src
 	$(MAKE) -C lib install
+	$(MAKE) -C src install
+
+uninstall:
+	$(MAKE) -C lib uninstall
+	$(MAKE) -C src uninstall
 
